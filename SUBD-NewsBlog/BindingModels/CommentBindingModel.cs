@@ -9,7 +9,6 @@ namespace NewsBlogBusinessLogic.BindingModels
         public int ArticleId { get; set; }
         public string Comment { get; set; }
         public DateTime DateCreate { get; set; }
-
         public DateTime? DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
     }

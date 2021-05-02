@@ -10,7 +10,6 @@ namespace NewsBlogBusinessLogic.BindingModels
         public string Title { get; set; }
         public string Text { get; set; }
         public DateTime DateCreate { get; set; }
-
         public DateTime? DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
     }

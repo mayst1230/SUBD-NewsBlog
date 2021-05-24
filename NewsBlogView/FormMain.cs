@@ -1,6 +1,7 @@
 ﻿using System;
 using Unity;
 using System.Windows.Forms;
+using NewsBlogBusinessLogic.BusinessLogic;
 
 namespace NewsBlogView
 {
@@ -8,10 +9,12 @@ namespace NewsBlogView
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
+        private readonly TransferLogic logicT;
 
-        public FormMain()
+        public FormMain(TransferLogic logicT)
         {
             InitializeComponent();
+            this.logicT = logicT;
         }
 
         private void buttonRoles_Click(object sender, EventArgs e)
@@ -41,6 +44,23 @@ namespace NewsBlogView
         private void buttonComments_Click(object sender, EventArgs e)
         {
             var form = Container.Resolve<FormComments>();
+            form.ShowDialog();
+        }
+
+        private void buttonImportData_Click(object sender, EventArgs e)
+        {
+            logicT.TransferAll();
+        }
+
+        private void buttonUserDocument_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormUserDocuments>();
+            form.ShowDialog();
+        }
+
+        private void buttonArticleDocument_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormArticleDocuments>();
             form.ShowDialog();
         }
     }

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using NewsBlogBusinessLogic.BusinessLogic;
 using NewsBlogBusinessLogic.Interfaces;
 using NewsBlogDatabaseImplement.Implements;
+using NewsBlogDatabaseImplement.RedisImplements;
 using Unity;
 using Unity.Lifetime;
 
@@ -30,11 +31,18 @@ namespace NewsBlogView
             currentContainer.RegisterType<ICommentStorage, CommentStorage>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IRoleStorage, RoleStorage>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IUserStorage, UserStorage>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IUserDocumentStorageRedis, UserDocumentStorageRedis>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IArticlelDocumentStorageRedis, ArticleDocumentStorageRedis>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IUserDocumentStorage, UserDocumentStorage>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IArticleDocumentStorage, ArticleDocumentStorage>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<ArticleLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<CategoryLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<CommentLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<RoleLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<UserLogic>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<TransferLogic>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<UserDocumentLogic>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<ArticleDocumentLogic>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

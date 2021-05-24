@@ -41,7 +41,8 @@ namespace NewsBlogDatabaseImplement.Implements
                 .Include(rec => rec.IdarticleNavigation)
                 .Include(rec => rec.IduserNavigation)
                 .Where(rec => rec.Comment.Contains(model.Comment) || (!model.DateFrom.HasValue && !model.DateTo.HasValue && rec.Date.Date == model.DateCreate.Date)
-                || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.Date.Date >= model.DateFrom.Value.Date && rec.Date.Date <= model.DateTo.Value.Date))
+                || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.Date.Date >= model.DateFrom.Value.Date && rec.Date.Date <= model.DateTo.Value.Date) 
+                || (model.ArticleId.HasValue && model.ArticleId.Value == rec.Idarticle))
                 .Select(rec => new CommentViewModel
                 {
                     Id = rec.Idcomment,
@@ -117,7 +118,7 @@ namespace NewsBlogDatabaseImplement.Implements
             comment.Comment = model.Comment;
             comment.Date = model.DateCreate;
             comment.Iduser = model.UserId;
-            comment.Idarticle = model.ArticleId;
+            comment.Idarticle = (int)model.ArticleId;
             return comment;
         }
     }

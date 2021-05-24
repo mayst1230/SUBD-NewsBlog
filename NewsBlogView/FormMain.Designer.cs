@@ -33,6 +33,9 @@
             this.buttonCategories = new System.Windows.Forms.Button();
             this.buttonArticles = new System.Windows.Forms.Button();
             this.buttonComments = new System.Windows.Forms.Button();
+            this.buttonImportData = new System.Windows.Forms.Button();
+            this.buttonUserDocument = new System.Windows.Forms.Button();
+            this.buttonArticleDocument = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonRoles
@@ -85,11 +88,44 @@
             this.buttonComments.UseVisualStyleBackColor = true;
             this.buttonComments.Click += new System.EventHandler(this.buttonComments_Click);
             // 
+            // buttonImportData
+            // 
+            this.buttonImportData.Location = new System.Drawing.Point(68, 160);
+            this.buttonImportData.Name = "buttonImportData";
+            this.buttonImportData.Size = new System.Drawing.Size(179, 23);
+            this.buttonImportData.TabIndex = 5;
+            this.buttonImportData.Text = "Перенос данных";
+            this.buttonImportData.UseVisualStyleBackColor = true;
+            this.buttonImportData.Click += new System.EventHandler(this.buttonImportData_Click);
+            // 
+            // buttonUserDocument
+            // 
+            this.buttonUserDocument.Location = new System.Drawing.Point(68, 189);
+            this.buttonUserDocument.Name = "buttonUserDocument";
+            this.buttonUserDocument.Size = new System.Drawing.Size(179, 23);
+            this.buttonUserDocument.TabIndex = 6;
+            this.buttonUserDocument.Text = "Пользователи (документы)";
+            this.buttonUserDocument.UseVisualStyleBackColor = true;
+            this.buttonUserDocument.Click += new System.EventHandler(this.buttonUserDocument_Click);
+            // 
+            // buttonArticleDocument
+            // 
+            this.buttonArticleDocument.Location = new System.Drawing.Point(68, 217);
+            this.buttonArticleDocument.Name = "buttonArticleDocument";
+            this.buttonArticleDocument.Size = new System.Drawing.Size(179, 23);
+            this.buttonArticleDocument.TabIndex = 7;
+            this.buttonArticleDocument.Text = "Статьи (документы)";
+            this.buttonArticleDocument.UseVisualStyleBackColor = true;
+            this.buttonArticleDocument.Click += new System.EventHandler(this.buttonArticleDocument_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 185);
+            this.ClientSize = new System.Drawing.Size(314, 254);
+            this.Controls.Add(this.buttonArticleDocument);
+            this.Controls.Add(this.buttonUserDocument);
+            this.Controls.Add(this.buttonImportData);
             this.Controls.Add(this.buttonComments);
             this.Controls.Add(this.buttonArticles);
             this.Controls.Add(this.buttonCategories);
@@ -108,6 +144,9 @@
         private System.Windows.Forms.Button buttonCategories;
         private System.Windows.Forms.Button buttonArticles;
         private System.Windows.Forms.Button buttonComments;
+        private System.Windows.Forms.Button buttonImportData;
+        private System.Windows.Forms.Button buttonUserDocument;
+        private System.Windows.Forms.Button buttonArticleDocument;
     }
 }
 
